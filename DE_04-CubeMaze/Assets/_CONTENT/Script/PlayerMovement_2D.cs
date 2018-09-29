@@ -6,7 +6,7 @@ public class PlayerMovement_2D : MonoBehaviour
 {
 
     Vector2 Playerpos;
-    public int MovementDir;
+    public static int MovementDir;
     public Rigidbody2D rb;
 
     private void Start()
@@ -23,6 +23,11 @@ public class PlayerMovement_2D : MonoBehaviour
         PlayerController();
         PlayerMovementController();
 
+        //Destory
+        if (OnColWall.Dead == "PlayerDead")
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void PlayerController()
